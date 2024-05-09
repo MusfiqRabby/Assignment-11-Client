@@ -1,9 +1,12 @@
+import Faq from "./Faq";
+import Slider from "./Slider";
 
 
 const Home = () => {
     return (
         <div>
-            <h1>This is Home</h1>
+            <Slider></Slider>
+            <Faq></Faq>
         </div>
     );
 };

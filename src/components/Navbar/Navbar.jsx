@@ -29,11 +29,11 @@ const Navbar = () => {
    
    
     return (
-      <div className='navbar bg-base-100 shadow-sm container '>
+      <div className='navbar bg-base-100 shadow-lg mt-2 container '>
         <div className='flex-1'>
           <Link to='/' className='flex gap-2 items-center'>
             <img className='w-auto h-7' src={logo} alt='' />
-            <span className='font-bold font-poppins'>Assigment</span>
+            <span className='font-bold font-poppins'>Assignment</span>
           </Link>
         </div>
         <div className='flex-none'>
