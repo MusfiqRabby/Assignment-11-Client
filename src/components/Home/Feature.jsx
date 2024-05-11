@@ -1,8 +1,7 @@
 
 const Feature = () => {
     return (
-        <div>
-
+        <div >
       <div className="mt-16 font-bold text-center hover:underline font-poppins text-4xl mb-8">
         <h2>Highlighted <span className="text-red-500">Features</span></h2>
      </div>

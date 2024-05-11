@@ -1,6 +1,6 @@
 
 import { useContext, useEffect, useState } from "react";
-import logo from "../../assets/images/logo.png";
+import logo from "../../assets/images/logo2.jpg";
 
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
@@ -29,7 +29,7 @@ const Navbar = () => {
    
    
     return (
-      <div className='navbar bg-base-100 shadow-lg mt-2 container '>
+      <div className='navbar bg-red-100 shadow-lg mt-2 container '>
         <div className='flex-1'>
           <Link to='/' className='flex gap-2 items-center'>
             <img className='w-auto h-7' src={logo} alt='' />
@@ -37,9 +37,18 @@ const Navbar = () => {
           </Link>
         </div>
         <div className='flex-none'>
-          <ul className='menu menu-horizontal px-1'>
+          <ul className='menu menu-horizontal px-1 font-poppins'>
             <li>
               <Link to='/'>Home</Link>
+            </li>
+            <li>
+              <Link to='/assignment'>Assignment</Link>
+            </li>
+            <li>
+              <Link to='/crassignment'>Create-Assignment</Link>
+            </li>
+            <li>
+              <Link to='/pending'>Pending Assignment</Link>
             </li>
   
             {!user && (
@@ -69,17 +78,9 @@ const Navbar = () => {
               className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52'
             >
               <li>
-                <div className='justify-between'>AAAA</div>
+                <div>Attempted Assignments</div>
               </li>
-              <li>
-                <div>BBBBBB</div>
-              </li>
-              <li>
-                <div>CCCCCC</div>
-              </li>
-              <li>
-                <div>EEEEEEEEE</div>
-              </li>
+              
               <li className='mt-2'>
                 <button 
                 onClick={logOut}

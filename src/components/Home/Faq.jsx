@@ -8,7 +8,7 @@ const Faq = () => {
             <h3 className="text-4xl hover:underline cursor-pointer">Frequently Asked <span className="text-red-500">Questions</span> ?</h3>
            </div>
 
-    <div className="hero min-h-screen  mb-10">
+    <div className="hero min-h-screen hover:scale-[1.05] transition-all mb-10">
   <div className="hero-content flex-col lg:gap-24 bg-gray-100 lg:flex-row">
     <img src="https://i.ibb.co/Fm41XHP/m011t0438-a-interrogation-box-07sep22.jpg" className="lg:max-w-sm w-3/4 rounded-lg shadow-2xl" />
     <div>
