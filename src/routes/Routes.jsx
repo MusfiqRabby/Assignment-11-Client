@@ -10,6 +10,8 @@ import PendingAssignment from "../pages/PendingAssignment";
 import UpdatePage from "../components/Update/UpdatePage";
 import ViewDetails from "../components/ViewDetails/ViewDetails";
 import TakeAssignment from "../components/TakeAssignment/TakeAssignment";
+import PrivateRoute from "./PrivateRoute";
+import AttemptAssignment from "../components/Attempt/AttemptAssignment";
 
 const router = createBrowserRouter([
     {
@@ -28,21 +30,31 @@ const router = createBrowserRouter([
         },
         {
           path: '/crassignment',
-          element: <CreateAssignment/>,
+          element: <PrivateRoute>
+            <CreateAssignment/>
+          </PrivateRoute>
         },
         {
           path: '/pending',
-          element: <PendingAssignment/>
+          element: <PrivateRoute>
+            <PendingAssignment/>
+          </PrivateRoute>
         },
         {
           path: '/viewdetails/:id',
-          element: <ViewDetails/>,
+          element: <PrivateRoute>
+            <ViewDetails/>
+          </PrivateRoute>,
           loader: ({params}) => fetch(`http://localhost:5000/create/${params.id}`)
         },
         {
           path: '/updatepage/:id',
           element: <UpdatePage/>,
           loader: ({params}) => fetch(`http://localhost:5000/create/${params.id}`)
+        },
+        {
+          path: '/attempt-assignment',
+          element: <AttemptAssignment/>
         },
         {
             path: '/login',

@@ -78,7 +78,7 @@ const Navbar = () => {
               className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52'
             >
               <li>
-                <div>Attempted Assignments</div>
+                <Link to='/attempt-assignment'>Attempted Assignments</Link>
               </li>
               
               <li className='mt-2'>

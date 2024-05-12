@@ -1,12 +1,14 @@
 /* eslint-disable no-undef */
-import { Link, useNavigate } from "react-router-dom"
+import { Link, useLocation, useNavigate } from "react-router-dom"
 import { AuthContext } from "../../provider/AuthProvider"
 import { useContext } from "react"
 import logo from "../../assets/images/logo2.jpg";
 import toast from "react-hot-toast"
 
 const Registration = () => {
-    const navigate = useNavigate()
+  const navigate = useNavigate();
+  const loaction = useLocation();
+    const from = loaction.state || '/'
     const { signInWithGoogle, createUser, updateUserProfile, user, setUser } =
     useContext(AuthContext)
 
@@ -24,7 +26,7 @@ const Registration = () => {
         //   console.log(result)
           await updateUserProfile(name, photo)
           setUser({ ...user, photoURL: photo, displayName: name })
-          navigate('/')
+          navigate(from, {replace: true})
           toast.success('Signup Successful')
         } catch (err) {
           console.log(err)
@@ -37,7 +39,7 @@ const Registration = () => {
     try {
       await signInWithGoogle()
       toast.success('Signin Successful')
-      navigate('/')
+      navigate(from, {replace: true})
     } catch (err) {
       console.log(err)
       toast.error(err?.message)
