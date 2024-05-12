@@ -5,7 +5,7 @@ const Feature = () => {
       <div className="mt-16 font-bold text-center hover:underline font-poppins text-4xl mb-8">
         <h2>Highlighted <span className="text-red-500">Features</span></h2>
      </div>
-     <div className="grid grid-cols-3 gap-16 mt-4 mb-16  ">
+     <div className="grid lg:grid-cols-3 gap-16 mt-4 mb-16  ">
     <div className="card w-96 bg-grray-100 shadow-xl hover:scale-[1.05] transition-all">
   <figure>
     <img src="https://i.ibb.co/Khn8VYm/back-school-concept-with-slate-leaning-against-wall.jpg" alt="" />

@@ -9,6 +9,7 @@ import Assignment from "../pages/Assignment";
 import PendingAssignment from "../pages/PendingAssignment";
 import UpdatePage from "../components/Update/UpdatePage";
 import ViewDetails from "../components/ViewDetails/ViewDetails";
+import TakeAssignment from "../components/TakeAssignment/TakeAssignment";
 
 const router = createBrowserRouter([
     {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
         {
             path: '/registartion',
             element: <Registration/>
+        },
+        {
+          path: '/takeassignmet/:id',
+          element: <TakeAssignment/>
         }
       ]
     },
