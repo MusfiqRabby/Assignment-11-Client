@@ -8,9 +8,9 @@ import { AuthContext } from "../../provider/AuthProvider";
 
     const CreateCard = ({create, cards, setCards}) => {
        const {user} = useContext(AuthContext)
-    const {_id, title, image, category, marks} = create;
+    const {_id, title, image, category, marks, email} = create;
 
-    const handleDelete = (_id, email) => {
+    const handleDelete = (_id) => {
       if(email !== user?.email){
         return  Swal.fire({
           icon: 'error',
@@ -18,6 +18,7 @@ import { AuthContext } from "../../provider/AuthProvider";
           text: 'This Assignment is no posted by you!'
         })
       }
+
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -65,14 +66,14 @@ import { AuthContext } from "../../provider/AuthProvider";
     </div>
     <div className="card-actions justify-end">
     
-    <Link to={`/viewdetails/${_id}`}></Link>
+    <Link to=''></Link>
     <button className="btn btn-info">view</button>
 
     <Link to={`/updatepage/${_id}`}>
     <button className="btn bg-green-500">Update</button>
      </Link>
    
-    <button onClick={() => handleDelete(_id,)}
+    <button onClick={() => handleDelete(_id)}
      className="btn bg-yellow-500">Delete</button>
 
 
