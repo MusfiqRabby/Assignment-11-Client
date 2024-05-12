@@ -66,8 +66,9 @@ import { AuthContext } from "../../provider/AuthProvider";
     </div>
     <div className="card-actions justify-end">
     
-    <Link to=''></Link>
+    <Link to={`/viewdetails/${_id}`}>
     <button className="btn btn-info">view</button>
+    </Link>
 
     <Link to={`/updatepage/${_id}`}>
     <button className="btn bg-green-500">Update</button>

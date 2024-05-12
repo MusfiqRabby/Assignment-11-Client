@@ -34,8 +34,9 @@ const router = createBrowserRouter([
           element: <PendingAssignment/>
         },
         {
-          path: '/viewdetails',
-          element: <ViewDetails/>
+          path: '/viewdetails/:id',
+          element: <ViewDetails/>,
+          loader: ({params}) => fetch(`http://localhost:5000/create/${params.id}`)
         },
         {
           path: '/updatepage/:id',
