@@ -2,6 +2,7 @@
 import { Link, useNavigate } from "react-router-dom"
 import { AuthContext } from "../../provider/AuthProvider"
 import { useContext } from "react"
+import logo from "../../assets/images/logo2.jpg";
 import toast from "react-hot-toast"
 
 const Registration = () => {
@@ -52,7 +53,7 @@ const Registration = () => {
             <div className='flex justify-center mx-auto'>
               <img
                 className='w-auto h-7 sm:h-8'
-                src='https://merakiui.com/images/logo.svg'
+                src={logo}
                 alt=''
               />
             </div>

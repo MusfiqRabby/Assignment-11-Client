@@ -7,6 +7,8 @@ import ErrorPage from "../pages/ErrorPage";
 import CreateAssignment from "../pages/CreateAssignment";
 import Assignment from "../pages/Assignment";
 import PendingAssignment from "../pages/PendingAssignment";
+import UpdatePage from "../components/Update/UpdatePage";
+import ViewDetails from "../components/ViewDetails/ViewDetails";
 
 const router = createBrowserRouter([
     {
@@ -25,11 +27,20 @@ const router = createBrowserRouter([
         },
         {
           path: '/crassignment',
-          element: <CreateAssignment/>
+          element: <CreateAssignment/>,
         },
         {
           path: '/pending',
           element: <PendingAssignment/>
+        },
+        {
+          path: '/viewdetails',
+          element: <ViewDetails/>
+        },
+        {
+          path: '/updatepage/:id',
+          element: <UpdatePage/>,
+          loader: ({params}) => fetch(`http://localhost:5000/create/${params.id}`)
         },
         {
             path: '/login',
