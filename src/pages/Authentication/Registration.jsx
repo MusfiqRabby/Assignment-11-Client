@@ -4,12 +4,13 @@ import { AuthContext } from "../../provider/AuthProvider"
 import { useContext } from "react"
 import logo from "../../assets/images/logo2.jpg";
 import toast from "react-hot-toast"
+import axios from "axios";
 
 const Registration = () => {
   const navigate = useNavigate();
   const loaction = useLocation();
     const from = loaction.state || '/'
-    const { signInWithGoogle, createUser, updateUserProfile, user, setUser } =
+    const { signInWithGoogle, createUser, updateUserProfile, setUser } =
     useContext(AuthContext)
 
     const handleSignUp = async e => {
@@ -22,10 +23,16 @@ const Registration = () => {
         console.log({ email, pass, name, photo })
         try {
           //2. User Registration
-           await createUser(email, pass)
-        //   console.log(result)
+          const result = await createUser(email, pass)
           await updateUserProfile(name, photo)
-          setUser({ ...user, photoURL: photo, displayName: name })
+          setUser({ ...result?.user, photoURL: photo, displayName: name })
+          const {data} = await axios.post('http://localhost:5000/jwt', 
+          {email: result?.user?.email},
+          {withCredentials: true}
+         )
+          console.log(data);
+
+
           navigate(from, {replace: true})
           toast.success('Signup Successful')
         } catch (err) {
@@ -37,7 +44,14 @@ const Registration = () => {
        // Google Sign in
    const handleGoogleSignIn = async () => {
     try {
-      await signInWithGoogle()
+    const result = await signInWithGoogle()
+      console.log(result.user);
+    const {data} = await axios.post('http://localhost:5000/jwt', 
+    {email: result?.user?.email},
+    {withCredentials: true}
+   )
+    console.log(data);
+
       toast.success('Signin Successful')
       navigate(from, {replace: true})
     } catch (err) {
