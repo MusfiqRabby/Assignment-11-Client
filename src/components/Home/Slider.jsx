@@ -7,9 +7,7 @@ import { Navigation, Autoplay, Pagination } from 'swiper/modules';
 const Slider = () => {
     return (
 
-    <div className="my-7 mb-7" data-aos="flip-right"
-    data-aos-easing="ease-out-cubic"
-    data-aos-duration="1500">
+    <div  className="my-7 mb-7">
        <Swiper 
       navigation={true}
       pagination={

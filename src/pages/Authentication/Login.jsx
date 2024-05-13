@@ -113,7 +113,7 @@ const Login = () => {
             <div className='flex items-center justify-between mt-4'>
               <span className='w-1/5 border-b  lg:w-1/4'></span>
   
-              <div className='text-sm text-center font-poppins uppercase hover:underline'>
+              <div className='text-sm text-center font-poppins uppercase hover:underline' >
                 or login with email
               </div>
   
@@ -132,7 +132,7 @@ const Login = () => {
                   autoComplete='email'
                   name='email'
                   className='block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg    focus:border-blue-400 focus:ring-opacity-40  focus:outline-none focus:ring focus:ring-blue-300'
-                  type='email'
+                  type='email' required
                 />
               </div>
   
@@ -152,6 +152,7 @@ const Login = () => {
                   name='password'
                   className='block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg    focus:border-blue-400 focus:ring-opacity-40  focus:outline-none focus:ring focus:ring-blue-300'
                   type='password'
+                  required
                 />
               </div>
               <div className='mt-6'>
