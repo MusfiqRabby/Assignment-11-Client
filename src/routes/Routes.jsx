@@ -26,7 +26,7 @@ const router = createBrowserRouter([
         {
           path: '/assignment',
           element: <Assignment/>,
-          loader: () => fetch('http://localhost:5000/create')
+          loader: () => fetch('https://assignment-related-project-server.vercel.app/create')
         },
         {
           path: '/crassignment',
@@ -45,12 +45,12 @@ const router = createBrowserRouter([
           element: <PrivateRoute>
             <ViewDetails/>
           </PrivateRoute>,
-          loader: ({params}) => fetch(`http://localhost:5000/create/${params.id}`)
+          loader: ({params}) => fetch(`https://assignment-related-project-server.vercel.app/create/${params.id}`)
         },
         {
           path: '/updatepage/:id',
           element: <UpdatePage/>,
-          loader: ({params}) => fetch(`http://localhost:5000/create/${params.id}`)
+          loader: ({params}) => fetch(`https://assignment-related-project-server.vercel.app/create/${params.id}`)
         },
         {
           path: '/attempt-assignment',
