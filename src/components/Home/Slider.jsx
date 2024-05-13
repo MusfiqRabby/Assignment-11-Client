@@ -35,7 +35,7 @@ const Slider = () => {
         </SwiperSlide>
 
           <SwiperSlide>
-          <div className="slide slide2 " >
+          <div className="slide slide2">
             <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://i.ibb.co/JQ3k5zN/books-vase-vintage-camera-eyeglasses-pencil-holders-white-blank-paper-wooden-backdrop.jpg)' }}>
               <div className="hero-overlay bg-opacity-50"></div>
               <div className="hero-content text-center text-neutral-content">
